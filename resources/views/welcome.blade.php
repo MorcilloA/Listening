@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -63,6 +63,7 @@
             }
         </style>
     </head>
+    <h1>TEST</h1>
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
