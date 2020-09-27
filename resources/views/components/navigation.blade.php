@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/">Accueil</a>
+          <a class="nav-link" href=" {{ route('home') }} ">Accueil</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="  ">Articles</a>
