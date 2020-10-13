@@ -16,7 +16,7 @@
         <a class="nav-link" href="">Catégories</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Auteurs</a>
+          <a class="nav-link" href="#">Utilisateurs</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href=" ">Contact</a>
