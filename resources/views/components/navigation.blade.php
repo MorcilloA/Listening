@@ -25,7 +25,7 @@
         
         @if (Auth::check())
           <li class="nav-item active">
-            <a class="nav-link" href="#"> {{ Auth::user()->name }} </a>
+            <a class="nav-link" href=" {{ route('user-profile', Auth::user()->id) }} "> {{ Auth::user()->name }} </a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href=" {{ url('/logout') }} "> Déconnexion </a>

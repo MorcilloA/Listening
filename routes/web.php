@@ -13,8 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//-----------Homepage route-----------//
 Route::get('/', 'HomeController@index')->name('home');
 
+//-----------Authenticate routes-----------//
 Auth::routes();
+Route::get('/logout', function(){
+    Auth::logout();
+    return redirect()->route('home');
+});
+
+//-----------User routes-----------//
+//Display a specific user profile page
+Route::get('/user/{id}', 'UserController@details')->name('user-profile');
+//Display the edit form for users
+Route::get('/user/{id}/edit', 'UserController@displayEdit')->name('user-edit-form');
+//Route to update the user
+Route::post('/user/{id}/update', 'UserController@update')->name('user-update');
 
 // Route::get('/home', 'HomeController@index')->name('home');

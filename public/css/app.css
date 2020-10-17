@@ -10903,3 +10903,14 @@ a.text-dark:focus {
   }
 }
 
+.profile-container {
+  width: 50%;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 75%;
+}
+
+.profile-container .card-img-top {
+  padding: 30px;
+}
+
