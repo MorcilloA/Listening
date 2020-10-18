@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UpdateUserRequest;
 use App\User;
+use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -12,6 +14,13 @@ class UserController extends Controller
 
     public function index(){
 
+        if (Auth::user()->role != 3) {
+            return view('home');
+        }
+
+        $users = User::all();
+        
+        return view('users')->with('users', $users);
     }
 
     /**
@@ -20,6 +29,11 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function details($id){
+
+        if (Auth::user()->role != 3 && Auth::user()->id != $id) {
+            return view('home');
+        }
+
         $user = User::findOrFail($id);
 
         // dd($user);

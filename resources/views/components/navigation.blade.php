@@ -15,9 +15,11 @@
         <li class="nav-item active">
         <a class="nav-link" href="">Catégories</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Utilisateurs</a>
-        </li>
+        @if (Auth::user() && Auth::user()->role == 3)
+          <li class="nav-item active">
+            <a class="nav-link" href=" {{ route('users') }} ">Users</a>
+          </li>  
+        @endif
         <li class="nav-item active">
           <a class="nav-link" href=" ">Contact</a>
         </li>

@@ -24,6 +24,8 @@ Route::get('/logout', function(){
 });
 
 //-----------User routes-----------//
+//Display the page with all users (for admins only)
+Route::get('/user', 'UserController@index')->name('users');
 //Display a specific user profile page
 Route::get('/user/{id}', 'UserController@details')->name('user-profile');
 //Display the edit form for users
