@@ -12,12 +12,14 @@
         <li class="nav-item active">
           <a class="nav-link" href="  ">Articles</a>
         </li>
-        <li class="nav-item active">
-        <a class="nav-link" href="">Catégories</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Utilisateurs</a>
-        </li>
+        @if (Auth::user() && Auth::user()->role == 3)
+          <li class="nav-item active">
+            <a class="nav-link" href=" {{ route('categories') }} ">Categories</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href=" {{ route('users') }} ">Users</a>
+          </li>  
+        @endif
         <li class="nav-item active">
           <a class="nav-link" href=" ">Contact</a>
         </li>
@@ -25,7 +27,7 @@
         
         @if (Auth::check())
           <li class="nav-item active">
-            <a class="nav-link" href="#"> {{ Auth::user()->name }} </a>
+            <a class="nav-link" href=" {{ route('user-profile', Auth::user()->id) }} "> {{ Auth::user()->name }} </a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href=" {{ url('/logout') }} "> Déconnexion </a>

@@ -52,4 +52,5 @@ class User extends Authenticatable
     public function favorites(){
         return $this->belongsToMany("App\Concert", "users_favorites", "user_id", "concert_id");
     }
+
 }
