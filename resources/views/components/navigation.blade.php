@@ -12,10 +12,10 @@
         <li class="nav-item active">
           <a class="nav-link" href="  ">Articles</a>
         </li>
-        <li class="nav-item active">
-        <a class="nav-link" href="">Catégories</a>
-        </li>
         @if (Auth::user() && Auth::user()->role == 3)
+          <li class="nav-item active">
+            <a class="nav-link" href=" {{ route('categories') }} ">Categories</a>
+          </li>
           <li class="nav-item active">
             <a class="nav-link" href=" {{ route('users') }} ">Users</a>
           </li>  

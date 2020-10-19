@@ -10928,3 +10928,8 @@ a.text-dark:focus {
   margin: auto;
 }
 
+.bootstrap-table #categories-table {
+  width: 400px;
+  margin: auto;
+}
+

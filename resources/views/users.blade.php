@@ -6,8 +6,8 @@
 data-toggle="table"
 data-search="true"
 data-classes="table table-bordered table-hover table-striped"
+id="users-table"
 >
-{{-- <table id="users-table"> --}}
     <thead>
         <th data-sortable="true" data-width="50" data-align="center">#</th>
         <th data-sortable="true">Name</th>

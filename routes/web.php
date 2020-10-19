@@ -33,4 +33,14 @@ Route::get('/user/{id}/edit', 'UserController@displayEdit')->name('user-edit-for
 //Route to update the user
 Route::post('/user/{id}/update', 'UserController@update')->name('user-update');
 
+//-----------Categories routes-----------//
+//Display the page with all categories (for admins only)
+Route::get('/category', 'CategoryController@index')->name('categories');
+//Display details about one category
+Route::get('category/{slug}', 'CategoryController@details')->name('category-details');
+//Display the edit form for category
+Route::get('/category/{slug}/edit', 'CategoryController@displayEdit')->name('category-edit-form');
+//Route to update the category
+Route::post('/category/{slug}/update', 'CategoryController@update')->name('category-update');
+
 // Route::get('/home', 'HomeController@index')->name('home');
