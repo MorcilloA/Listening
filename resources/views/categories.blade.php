@@ -18,8 +18,8 @@
                     <td> {{ $category->id }} </td>
                     <td> {{ $category->name }} </td>
                     <td>
-                        <a href=" {{ route('category-details', $category->id) }} " class="btn btn-primary" title="Show {{ $category->name }} details"><i class="fas fa-eye"></i></a>
-                        <a href=" {{ route('category-edit-form', $category->id) }} " class="btn btn-warning" title="Edit {{ $category->name }} category"><i class="fas fa-edit"></i></a>
+                        <a href=" {{ route('category-details', $category->slug) }} " class="btn btn-primary" title="Show {{ $category->name }} details"><i class="fas fa-eye"></i></a>
+                        <a href=" {{ route('category-edit-form', $category->slug) }} " class="btn btn-warning" title="Edit {{ $category->name }} category"><i class="fas fa-edit"></i></a>
                         {{-- <a href=" {{ route('category-remove', $category->id) }} " class="btn btn-danger">Delete user</a> --}}
                     </td>
                 </tr>

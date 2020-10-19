@@ -56,18 +56,17 @@ class CategoryController extends Controller
 
         $category = Category::where('slug', $slug)->firstOrFail();
 
-        return view('category-details')->with('category', $category);
+        return view('categoryDetails')->with('category', $category);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Category $category)
-    {
-        //
+    public function displayEdit($slug){
+        if (Auth::user()->role != 3) {
+            return view('home');
+        }
+        
+        $category = Category::where('slug', $slug)->firstOrFail();
+
+        return view('categoryEdit')->with('category', $category);
     }
 
     /**

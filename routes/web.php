@@ -28,8 +28,8 @@ Route::get('/logout', function(){
 Route::get('/user', 'UserController@index')->name('users');
 //Display a specific user profile page
 Route::get('/user/{id}', 'UserController@details')->name('user-profile');
-//Display the edit form for users
-Route::get('/user/{id}/edit', 'UserController@displayEdit')->name('user-edit-form');
+// //Display the edit form for users
+// Route::get('/user/{id}/edit', 'UserController@displayEdit')->name('user-edit-form');
 //Route to update the user
 Route::post('/user/{id}/update', 'UserController@update')->name('user-update');
 
