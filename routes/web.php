@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home/concerts', 'ConcertsController@index')->name('concerts');
 
 Auth::routes();
 
