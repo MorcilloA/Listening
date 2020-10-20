@@ -15,12 +15,12 @@ We had the idea of making a site for people who enjoy music and artists that wha
 ## Difficulties 
 
 We had some difficulties with : 
-- Git : We got issues to commit and push in differents branch of the project. 
-- The filter : 
-- The payment : We thought of using stripes at first for the payment method but with a lack of time and difficulties to learn how to use it we decide to make it in a different     way
-- Including library : we had some diffilcuties using libraries like moment or datetimepicker.
-- Download picture 
-- Time management
+- Github : We got issues to commit and push in differents branches of the project. Only one of them was working.
+- The filters : We needed a long time to be able to use the filters. 
+- The payment : We thought of using stripes at first for the payment method but with a lack of time and difficulties to learn how to use it we decided to make it in a different     way so it only is some form fields
+- Including libraries : we had some diffilcuties using many libraries with laravel. We had to abandonned them and find stranges ways to go around. For example we couldn't use multiselect bootstrap librairy or the jquery datetimpicker or moment.js. The same way it took a us a lot of time to be able to use sweetalert2 which is originally easy to install and use.
+- Download picture : we had to abandon this part because there was no way to make it work.
+- Time management : We don't know why but we got caught by time, probably mainly because of the impossibility to use many librairies.
 
 ## Requierement 
 
