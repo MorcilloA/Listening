@@ -45,11 +45,73 @@
                     </div>
                 </div>
             </div>
-            @if ($user->id == Auth::user()->id)
+            @if (Auth::user() && $user->id == Auth::user()->id || Auth::user()->role === 3)
                 <div class="card-footer text-right">
-                    <a href=" {{ route('user-edit-form', $user->id) }} " class="btn btn-primary">Edit</a>
+                    {{-- <a href=" {{ route('user-edit-form', $user->id) }} " class="btn btn-primary">Edit</a> --}}
+                    <button id="editUser" class="btn btn-primary">Edit</button>
                 </div>
             @endif
           </div>
     </div>
 @endsection
+
+{{-- <script> --}}
+    @section('script')
+        $('#editUser').click(function (e) {
+            Swal.fire({
+                title: "Let's edit this profile !",
+                html:   '<form action=\' {{ route("user-update", $user->id) }} \' method="post">'+
+                        '   @csrf'+
+                        '   <div class="form-group">'+
+                        '       <label for="name">Name</label>'+
+                        '       <input class="form-control" type="text" name="name" id="name" value=" {{ $user->name }} " required>'+
+                        '   </div>'+
+                        '   <div class="form-group">'+
+                        '       <label for="name">Email</label>'+
+                        '       <input class="form-control" type="email" name="email" id="email" value=" {{ $user->email }} " required>'+
+                        '   </div>'+
+                        '   <div class="form-group">'+
+                        '        <label for="content">Profile Picture</label>'+
+                        '        <input type="file" name="image" id="image" accept="image/*" class="form-control-file">'+
+                        '   </div>'+
+                        '   <div class="form-group">'+
+                        '       <label for="role">Role</label>'+
+                        '       <div class="form-check">'+
+                        '           <input class="form-check-input" type="radio" name="role" id="user" value="1"'+
+                        @if ($user->role === 1) 
+                            'checked'+
+                        @endif
+                        ' >'+
+                        '           <label class="form-check-label" for="user">'+
+                        '           User'+
+                        '           </label>'+
+                        '       </div>'+
+                        '       <div class="form-check">'+
+                        '           <input class="form-check-input" type="radio" name="role" id="artist" value="2"'+
+                        @if ($user->role === 2) 
+                            'checked'+
+                        @endif
+                        '>'+
+                        '           <label class="form-check-label" for="artist">'+
+                        '           Artist'+
+                        '           </label>'+
+                        '       </div>'+
+                        '       <div class="form-check">'+
+                        '           <input class="form-check-input" type="radio" name="role" id="administrator" value="3"'+
+                        @if ($user->role === 3) 
+                            'checked'+
+                        @endif
+                        '>'+
+                        '           <label class="form-check-label" for="administrator">'+
+                        '           Administrator'+
+                        '           </label>'+
+                        '       </div>'+
+                        '   </div>'+
+                        '   <button type="submit" class="btn btn-primary">Enregistrer</button>'+
+                        '   @include("components.errors")'+
+                        '</form> ',
+                showConfirmButton: false
+            });
+        });
+    @endsection
+{{-- </script> --}}

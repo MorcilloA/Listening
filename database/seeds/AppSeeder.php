@@ -12,25 +12,25 @@ class AppSeeder extends Seeder
     public function run()
     {
         
-        factory(App\User::class, 50)->create();
+        factory(App\User::class, 500)->create();
 
-        factory(App\Concert::class, 20)->create();
+        factory(App\Concert::class, 150)->create();
 
         $categories = App\Category::all();
         $concerts = App\Concert::all();
 
-        App\User::all()->each(function($user) use ($categories, $concerts) {
-            $user->categories()->attach(
-                $categories->random(rand(1,3))->pluck('id')->toArray()
-            );
+        App\User::all()->each(function($user) use ($concerts) {
             $user->favorites()->attach(
                 $concerts->random(rand(0,5))->pluck('id')->toArray()
             );
         });
 
-        App\User::where("role", "2")->each(function($user) use ($concerts) {
+        App\User::where("role", "2")->each(function($user) use ($categories, $concerts) {
             $user->concerts()->attach(
-                $concerts->random(rand(0,4))->pluck('id')->toArray()
+                $concerts->random(rand(0,30))->pluck('id')->toArray()
+            );
+            $user->categories()->attach(
+                $categories->random(rand(1,3))->pluck('id')->toArray()
             );
         });
 

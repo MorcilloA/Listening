@@ -9,8 +9,6 @@ require('./bootstrap');
 
 //bootstrap table
 require('bootstrap-table');
-// require('laravel-bootstrap-table');
-// require('../../node_modules/bootstrap-table/dist/bootstrap-table');
 
 
 //others

@@ -25,6 +25,7 @@
         "bootstrap-table": "^1.18.0"
     },
     "dependencies": {
-        "laravel-bootstrap-table": "0.0.4"
+        "laravel-bootstrap-table": "0.0.4",
+        "sweetalert2": "^10.6.1"
     }
 }
