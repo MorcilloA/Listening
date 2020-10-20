@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            @if ($user->id == Auth::user()->id || Auth::user()->role === 3)
+            @if (Auth::user() && $user->id == Auth::user()->id || Auth::user()->role === 3)
                 <div class="card-footer text-right">
                     {{-- <a href=" {{ route('user-edit-form', $user->id) }} " class="btn btn-primary">Edit</a> --}}
                     <button id="editUser" class="btn btn-primary">Edit</button>
@@ -69,6 +69,10 @@
                         '   <div class="form-group">'+
                         '       <label for="name">Email</label>'+
                         '       <input class="form-control" type="email" name="email" id="email" value=" {{ $user->email }} " required>'+
+                        '   </div>'+
+                        '   <div class="form-group">'+
+                        '        <label for="content">Profile Picture</label>'+
+                        '        <input type="file" name="image" id="image" accept="image/*" class="form-control-file">'+
                         '   </div>'+
                         '   <div class="form-group">'+
                         '       <label for="role">Role</label>'+

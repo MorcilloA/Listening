@@ -20,5 +20,9 @@ class Concert extends Model
     public function artists(){
         return $this->belongsToMany("App\User", "concerts_users", "concert_id", "user_id");
     }
+    
+    public function isFavorite(){
+        return $this->belongsToMany("App\User", "users_favorites", "concert_id", "user_id");
+    }
 
 }

@@ -14,7 +14,7 @@ $factory->define(Concert::class, function (Faker $faker) {
     return [
         'name' => $name,
         'slug' => $slugger->slug($name),
-        'date' => $faker->dateTimeBetween("now", "+1 year"),
+        'date' => $faker->dateTimeBetween("-1 year", "+1 year"),
         'place' => $faker->address(),
         'price' => $faker->numberBetween(50, 200),
         'ticket_total' => $tickets,
