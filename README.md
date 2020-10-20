@@ -20,6 +20,7 @@ We had some difficulties with :
 - The payment : We thought of using stripes at first for the payment method but with a lack of time and difficulties to learn how to use it we decide to make it in a different     way
 - Including library : we had some diffilcuties using libraries like moment or datetimepicker.
 - Download picture 
+- Time management
 
 ## Requierement 
 
