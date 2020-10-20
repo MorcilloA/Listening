@@ -7,6 +7,20 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+
+## Listening
+
+We had the idea of making a site for people who enjoy music and artists that what to share their love for this art. We tried to diversify the categories of music represented on our site.
+
+## Difficulties 
+
+We had some difficulties with : 
+- Git
+- The filter 
+- The payment 
+- Including library
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
