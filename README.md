@@ -15,11 +15,24 @@ We had the idea of making a site for people who enjoy music and artists that wha
 ## Difficulties 
 
 We had some difficulties with : 
-- Git
-- The filter 
-- The payment 
-- Including library
+- Git : We got issues to commit and push in differents branch of the project. 
+- The filter : 
+- The payment : We thought of using stripes at first for the payment method but with a lack of time and difficulties to learn how to use it we decide to make it in a different     way
+- Including library : we had some diffilcuties using libraries like moment or datetimepicker.
+- Download picture 
 
+## Requierement 
+
+Dont forget to use, before lunching your php serve, the next command :
+
+- composer require 
+- npm install
+- Create the file .env
+- php artisan key:generate 
+- create on you Phpmyadmin the database with the name : listening
+- php artisan migrate:refresh --seed
+
+You're good to take i look at our work now ! 
 
 ## About Laravel
 
